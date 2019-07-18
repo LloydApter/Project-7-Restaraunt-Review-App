@@ -17,48 +17,39 @@
   <title>Restaurant Info</title>
 </head>
 
-<body class="inside">
-  <!-- Beginning header -->
+<body>
+
   <header>
-    <!-- Beginning nav -->
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
-    <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb">
+    <ul id="breadcrumb" aria-label="Breadcrumb">
       <li><a href="/">Home</a></li>
     </ul>
-    <!-- End breadcrumb -->
-    <!-- End nav -->
   </header>
-  <!-- End header -->
 
-  <!-- Beginning main -->
-  <main id="maincontent">
-    <!-- Beginning map -->
-    <section id="map-container">
+  <main id="inside">
+    <section id="map-container" aria-label="Google Map displaying location of restaurant.">
       <div id="map"></div>
     </section>
-    <!-- End map -->
-    <!-- Beginning restaurant -->
-    <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
-    </section>
-    <!-- end restaurant -->
-    <!-- Beginning reviews -->
-    <section id="reviews-container">
-      <ul id="reviews-list"></ul>
-    </section>
-    <!-- End reviews -->
-  </main>
-  <!-- End main -->
 
-  <!-- Beginning footer -->
-  <footer id="footer">
+    <section id="restaurant-container" aria-label="Restaraunt Details">
+      <h1 id="restaurant-name" aria-label="Restaraunt Name"></h1>
+      <img id="restaurant-img" alt="">
+      <p id="restaurant-cuisine" aria-label="Restaraunt Cuisine"></p>
+      <address>
+        <h2>Address</h2>
+          <p id="restaurant-address" aria-label="Restaraunt Address"></p>
+      </address>
+      <table id="restaurant-hours" aria-label="Restaraunt Hours"></table>
+    </section>
+
+    <section id="reviews-container" aria-label="Restaraunt Reviews">
+      <ul id="reviews-list" aria-label="Reviews List"></ul>
+    </section>
+  </main>
+
+  <footer>
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->
