@@ -87,7 +87,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -105,6 +105,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
+  const container = document.getElementById('restaurant-hours');
+  const title = document.createElement('h2');
+  title.innerHTML = 'Hours';
+  container.appendChild(title);
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
@@ -148,15 +152,15 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const name = document.createElement('p');
+  const name = document.createElement('h2');
   name.innerHTML = review.name;
   li.appendChild(name);
 
-  const date = document.createElement('p');
+  const date = document.createElement('h3');
   date.innerHTML = review.date;
   li.appendChild(date);
 
-  const rating = document.createElement('p');
+  const rating = document.createElement('button');
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
