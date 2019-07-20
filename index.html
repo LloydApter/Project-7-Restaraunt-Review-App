@@ -21,12 +21,11 @@
       <h1 is="restaurant-reviews"><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
-
-  <main id="maincontent">
+  <!-- id="maincontent" is symmantically obvious as it's on the main tag so removed it. -->
+  <main>
     <section id="map-container">
       <div id="map" aria-label="Google Map, displaying restaraunt locations."></div>
     </section>
-
     <section role="search" class="filter-options" aria-labelledby="filter-results" aria-label="Restaurants Search">
         <h2 id="filter-results">Filter Results</h2>
         <select id="neighborhoods-select" aria-label="Neightborhoods Select" name="neighborhoods" role="filter" onchange="updateRestaurants()">
@@ -36,7 +35,6 @@
           <option value="all">All Cuisines</option>
         </select>
     </section>
-
       <section aria-label="Restaurant List">
       <ul id="restaurants-list"></ul>
     </section>

@@ -18,6 +18,19 @@
 </head>
 
 <body>
+  <header>
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+    <ul id="breadcrumb" aria-label="Breadcrumb">
+      <li><a href="/">Home</a></li>
+    </ul>
+  </header>
+  <main>
+    <section id="map-container" aria-label="Google Map displaying location of restaurant.">
+      <div id="map"></div>
+    </section>
+<body>
 
   <header>
     <nav>
@@ -35,8 +48,15 @@
 
     <section id="restaurant-container" aria-label="Restaraunt Details">
       <h1 id="restaurant-name" aria-label="Restaraunt Name"></h1>
-      <img id="restaurant-img" alt="">
+      <img id="restaurant-img">
       <p id="restaurant-cuisine" aria-label="Restaraunt Cuisine"></p>
+      <p id="restaurant-address" aria-label="Restaraunt Address"></p>
+      <table id="restaurant-hours" aria-label="Restaraunt Hours"></table>
+    </section>
+    <section id="reviews-container" aria-label="Restaraunt Reviews">
+      <ul id="reviews-list" aria-label="Reviews List"></ul>
+    </section>
+  </main>
       <address>
         <h2>Address</h2>
           <p id="restaurant-address" aria-label="Restaraunt Address"></p>
@@ -48,7 +68,6 @@
       <ul id="reviews-list" aria-label="Reviews List"></ul>
     </section>
   </main>
-
   <footer>
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
@@ -66,5 +85,4 @@
   <!-- End scripts -->
 
 </body>
-
 </html>
