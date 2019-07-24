@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     // const port = 8000; // Change this to your server port
-    return `https://lloydapter.github.io`;
+    return `https://lloydapter.github.io/Project-7-Restaurant-Review-App/data/restaurants.json`;
     // return `http://localhost:${port}/data/restaurants.json`;
   }
 
