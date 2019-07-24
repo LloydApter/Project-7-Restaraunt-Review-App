@@ -88,7 +88,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 //   updateRestaurants();
 // };
 
- windows.initMap = () => {
+window.initMap = function(){
   let loc = {
     lat: 40.722216,
     lng: -73.987501
