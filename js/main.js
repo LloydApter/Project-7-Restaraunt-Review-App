@@ -8,7 +8,7 @@ var markers = [];
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (callback) => {
-  initMap(); 
+  window.initMap(); 
   fetchNeighborhoods();
   fetchCuisines();
 });

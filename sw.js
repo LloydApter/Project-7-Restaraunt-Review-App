@@ -17,7 +17,6 @@ const cacheAssets = [
     'img/9.jpg',
     'img/10.jpg',
     'img/1.jpg',
-    'data/restaurants.json',
     'css/styles.css',
     'css/medium.css',
     'css/large.css',
