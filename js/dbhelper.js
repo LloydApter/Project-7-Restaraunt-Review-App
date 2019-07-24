@@ -144,14 +144,17 @@ class DBHelper {
    * Restaurant page URL.
    */
   static urlForRestaurant(restaurant) {
-    return (`./restaurant.html?id=${restaurant.id}`);
+    // return (`./restaurant.html?id=${restaurant.id}`);
+    return (`${restaurant.id}`);
   }
 
   /**
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+    // return (`/img/${restaurant.photograph}`);
+    return (`${restaurant.photograph}`);
+    // return (`Project-7-Restaurant-Review-App/tree/master/img/${restaurant.photograph}`);
     
   }
 
