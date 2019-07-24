@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+var version = 'v1::';
 const cacheAssets = [
     'index.hmtl',
     'restaurant.html',
