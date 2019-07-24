@@ -7,7 +7,7 @@ var markers = [];
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
-document.addEventListener('DOMContentLoaded', (call) => {
+document.addEventListener('DOMContentLoaded', (callback) => {
   initMap(); 
   fetchNeighborhoods();
   fetchCuisines();
@@ -181,7 +181,8 @@ createRestaurantHTML = (restaurant) => {
 
   const moreButton = document.createElement('button');
   const moreLink = document.createElement('a');
-  moreLink.innerHTML = 'View Details';
+  moreButton.tabIndex=-1;
+  moreLink.innerHTML = `${restaurant.name} reviews`;
   moreLink.href = DBHelper.urlForRestaurant(restaurant);
   li.append(moreButton);
   moreButton.append(moreLink);
@@ -192,18 +193,18 @@ createRestaurantHTML = (restaurant) => {
 /**
  * Add markers for current restaurants to the map.
  */
-addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
-    marker.on("click", onClick);
-    function onClick() {
-      window.location.href = marker.options.url;
-    }
-    self.markers.push(marker);
-  });
+// addMarkersToMap = (restaurants = self.restaurants) => {
+//   restaurants.forEach(restaurant => {
+//     // Add marker to the map
+//     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+//     marker.on("click", onClick);
+//     function onClick() {
+//       window.location.href = marker.options.url;
+//     }
+//     self.markers.push(marker);
+//   });
 
-};
+// };
  addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map

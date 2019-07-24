@@ -1,97 +1,149 @@
 /* Large desktop screens */
 @media all and (min-width: 1000px) {
 
-    /* Home page configuration for large screens allowing three articles to appear on one row */
-    main #maincontent {
-        grid-area: main;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            "map map map"
-            ". search ."
-            "list list list";
-        align-items: stretch;
-        background-color: #fdfdfd;
-        margin: auto;
-    }
+  /* Home page configuration for large screens allowing three articles to appear on one row */
+  main #maincontent {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "map map map"
+      "search search search"
+      "list list list";
+    align-items: stretch;
+    grid-gap: 10px;
+    background-color: #fdfdfd;
+    /* margin: auto; */
+  }
 
-    .filter-options {
-        grid-area: search;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            " header select select";
-        width: 100%;
-        height: 80px;
-        background-color: darkgreen;
-        align-items: center;
-    }
+  .filter-options {
+    grid-area: search;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    /* grid-gap: 10px; */
+    grid-template-areas:
+      "header place food";
+    max-width: 100%;
+    height: auto;
+    padding: 20px 0px 20px 0px;
+    background: darkgreen;
+    margin: auto;
+  }
 
-    .filter-options select {
-        min-width: 500px;
-        max-width: 100%;
-    }
+  #filter-results {
+    grid-area: header;
+    justify-self: start;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1;
+    margin: auto;
+    text-transform: uppercase;
+  }
 
-    #restaurants-list {
-        grid-area: list;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-        grid-gap: 1rem;
-        background-color: white;
-        list-style: none;
-        margin: auto;
-        padding: 30px 15px 60px;
-    }
+  #neighborhoods-select {
+    grid-area: place;
+    justify-self: start;
+    background-color: white;
+    border: 1px solid #fff;
+    font-size: 1.1em;
+    margin: auto;
+    max-width: 100%;
+    padding: 1px 10px 1px 1px;
+  }
 
-    #restaurants-list li {
-        align-self: center;
-        background-color: white;
-        border: 2px solid #ccc;
-        margin: 15px;
-        min-height: 380px;
-        padding: 0;
-        text-align: left;
-      }
+  #cuisines-select {
+    grid-area: food;
+    justify-self: start;
+    background-color: white;
+    border: 1px solid #fff;
+    font-size: 1.1em;
+    margin: auto;
+    max-width: 100%;
+    padding: 1px 50px 1px 1px;
+  }
 
-      #restaurants-list > .restaurant-img {
-        display: block;
-        background-color: #ccc;
-        width: 100%;
-        margin: auto;
-      }
+  #restaurants-list {
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 1rem;
+    background-color: white;
+    list-style: none;
+    margin: auto;
+    padding: 30px 15px 60px;
+  }
 
-      #inside {
-        grid-area: main;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        align-items: start;
-        align-content: top;	
-        grid-gap: 1rem;
-        grid-template-areas:
-        "map map"
-        "detail reviews";
-        background-color: #fdfdfd;
-        margin: auto;
-        
-      }
+  #restaurants-list li {
+    align-self: center;
+    background-color: white;
+    border: 2px solid #ccc;
+    margin: 15px;
+    min-height: 380px;
+    padding: 0;
+    text-align: left;
+  }
 
-      #restaurant-img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 95%;
-      }
+  #restaurants-list>.restaurant-img {
+    display: block;
+    background-color: #ccc;
+    width: 100%;
+    margin: auto;
+  }
 
+  #inside {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: start;
+    align-content: top;
+    /* grid-gap: 10px; */
+    grid-template-areas:
+      "map map"
+      "detail reviews";
+    background-color: #fdfdfd;
+    margin: auto;
+  }
 
-      #restaurant-container {
-        grid-area: detail;
-        align-content: start;
-        height: 100%;
-      }
+  /* #restaurant-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  } */
 
-      #reviews-container {
-        grid-area: reviews;
-        align-self: start;
-      }
+  #restaurant-container {
+    grid-area: detail;
+    align-content: start;
+    height: 100%;
+    /* margin: auto;  */
+  }
+
+  #restaurant-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: stretch;
+    /* margin: auto; */
+    grid-area: detail;
+    align-content: start;
+    height: 100%;
+    grid-template-areas: 
+    "cuisine"
+    "name"
+    "image"
+    "address";
+    border-bottom: 1px solid #d9d9d9;
+    border-top: 1px solid #fff;
+    background-color: #eee;
+  }
+  
+
+  #reviews-container {
+    grid-area: reviews;
+    align-self: start;
+    margin: auto;
+  }
 }

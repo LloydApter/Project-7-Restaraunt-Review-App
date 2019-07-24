@@ -1,62 +1,94 @@
 /* Medium screens and tablets */
 @media all and (min-width: 660px) {
 
-    /* Home page format for medium size screens, tablets, enabling two articles to appear on a row */
-    main #maincontent {
-        grid-area: main;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            "map map map"
-            ". search ."
-            "list list list";
-        align-items: stretch;
-        background-color: #fdfdfd;
-        margin: auto;
-    }
+  /* Home page format for medium size screens, tablets, enabling two articles to appear on a row */
+  main #maincontent {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "map map map"
+      ". search ."
+      "list list list";
+    align-items: stretch;
+    background-color: #fdfdfd;
+    margin: auto;
+  }
 
-    .filter-options {
-        grid-area: search;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            " header select select";
-        width: 100%;
-        height: 80px;
-        background-color: darkgreen;
-        align-items: center;
-    }
+  .filter-options {
+    grid-area: search;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      "header place food";
+    width: 100%;
+    height: auto;
+    padding: 1%;
+    background: darkgreen;
+    margin: auto;
+  }
 
-    .filter-options select {
-        min-width: 220px;
-        max-width: 100%;
-    }
+  #filter-results {
+    grid-area: header;
+    justify-self: start;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1;
+    margin: auto;
+    text-transform: uppercase;
+  }
 
-    #restaurants-list {
-        grid-area: list;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-        grid-gap: 1rem;
-        background-color: white;
-        list-style: none;
-        margin: auto;
-        padding: 30px 15px 60px;
-    }
+  #neighborhoods-select {
+    grid-area: place;
+    justify-self: start;
+    background-color: white;
+    border: 1px solid #fff;
+    font-size: 1.1em;
+    margin: auto;
+    max-width: 100%;
+    padding: 1px 10px 1px 1px;
+  }
 
-    #restaurants-list li {
-        align-self: center;
-        background-color: white;
-        border: 2px solid #ccc;
-        margin: 15px;
-        min-height: 380px;
-        padding: 0;
-        text-align: left;
-      }
+  #cuisines-select {
+    grid-area: food;
+    justify-self: start;
+    background-color: white;
+    border: 1px solid #fff;
+    font-size: 1.1em;
+    margin: auto;
+    max-width: 100%;
+    padding: 1px 50px 1px 1px;
+  }
 
-      #restaurants-list .restaurant-img {
-        display: block;
-        background-color: #ccc;
-        width: 100%;
-        margin: auto;
-      }
+
+  #restaurants-list {
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-gap: 1rem;
+    background-color: white;
+    list-style: none;
+    margin: auto;
+    padding: 30px 15px 60px;
+  }
+
+  #restaurants-list li {
+    align-self: center;
+    background-color: white;
+    border: 2px solid #ccc;
+    margin: 15px;
+    min-height: 380px;
+    padding: 0;
+    text-align: left;
+  }
+
+  #restaurants-list .restaurant-img {
+    display: block;
+    background-color: #ccc;
+    width: 100%;
+    margin: auto;
+  }
 }

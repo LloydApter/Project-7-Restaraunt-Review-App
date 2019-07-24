@@ -21,6 +21,7 @@
 <body>
 
   <header>
+      <a href="#reviews-list" class="skip-link">Skip Google Map and go directly to restaraunt reviews</a>
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
@@ -30,23 +31,24 @@
   </header>
 
   <main id="inside">
-    <section id="map-container" aria-label="Google Map displaying location of restaurant.">
-      <div id="map"></div>
+    <section id="map-container">
+      <div id="map" aria-hidden="true"></div>
     </section>
 
-    <section id="restaurant-container" aria-label="Restaraunt Details">
-      <h1 id="restaurant-name" aria-label="Restaraunt Name"></h1>
+    <section id="restaurant-container">
+      <p id="restaurant-cuisine"></p>
+      <h1 id="restaurant-name"></h1>
       <img id="restaurant-img">
-      <p id="restaurant-cuisine" aria-label="Restaraunt Cuisine"></p>
+      
       <address>
         <h2>Address & Hours</h2>
-        <p id="restaurant-address" aria-label="Restaraunt Address"></p>
-        <table id="restaurant-hours" aria-label="Restaraunt Hours"></table>
+        <p id="restaurant-address"></p>
+        <table id="restaurant-hours"></table>
       </address>
     </section>
 
-    <section id="reviews-container" aria-label="Restaraunt Reviews">
-      <ul id="reviews-list" aria-label="Reviews List"></ul>
+    <section id="reviews-container">
+      <ul id="reviews-list"></ul>
     </section>
   </main>
 

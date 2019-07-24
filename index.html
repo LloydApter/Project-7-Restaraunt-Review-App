@@ -18,32 +18,55 @@
 
 <body>
   <header>
+    <label>
+      <a href="#filter-results" class="skip-link">Skip Google Map and go directly to filter results</a>
+    </label>
     <nav aria-labelledby="restaurant-reviews">
       <h1 id="restaurant-reviews"><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
   <main id="#maincontent">
     <section id="map-container">
-      <div id="map" aria-label="Google Map, displaying restaraunt locations."></div>
+      <div id="map" aria-hidden="true"></div>
     </section>
-    <section role="search">
-      <div class="filter-options" aria-labelledby="filter-results" aria-label="Restaurants Search">
-        <h2 id="filter-results" role="search">Filter Results</h2>
-        <select id="neighborhoods-select" aria-label="Neightborhoods Select" name="neighborhoods" role="listbox" onchange="updateRestaurants()">
+    <section>
+      <div class="filter-options">
+        <label>
+          <h2 id="filter-results" aria-label="Restaurants Search" role="search" tabindex="0">Filter Results</h2>
+        </label>
+        <select id="neighborhoods-select" aria-label="Neighborhood Select" name="neighborhoods" role="listbox"
+          onchange="updateRestaurants()">
           <option tabindex="0" value="all" role="option">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" aria-label="Cuisines Select" role="listbox" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" aria-label="Cuisines Select" role="listbox"
+          onchange="updateRestaurants()">
           <option tabindex="0" value="all" role="option">All Cuisines</option>
         </select>
       </div>
     </section>
-      <section aria-label="Restaurant List">
+    <section aria-label="Restaurant List">
       <ul id="restaurants-list"></ul>
     </section>
   </main>
-
+  <script>
+    function initMap() {
+      let loc = {
+        lat: 40.722216,
+        lng: -73.987501
+      };
+      self.map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: loc,
+        scrollwheel: false
+      });
+      updateRestaurants();
+      fetchNeighborhoods();
+      fetchCuisines();
+    }
+  </script>
   <!-- <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script> -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnpwi11NvuvUd9QRkCcaxwvjEXTqP0EVY&callback=initMap"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnpwi11NvuvUd9QRkCcaxwvjEXTqP0EVY&callback=initMap"></script>
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/regsw.js"></script>
