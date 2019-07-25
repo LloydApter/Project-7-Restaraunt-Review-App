@@ -23,11 +23,11 @@ const cacheAssets = [
     'css/large.css',
 ];
 
-// Call service worker install event and cache files without waiting
+// Call service worker install event and cache files
 self.addEventListener('install', e => {
     e.waitUntil(
         caches
-        .open(cacheName)
+        .open(cacheVersion)
         .then(cache => {
             cache.addAll(cacheAssets);
         })
@@ -38,10 +38,10 @@ self.addEventListener('install', e => {
 // Call activate event and clear old caches
 self.addEventListener('activate', e => {
     e.waitUntil(
-        caches.keys().then(cacheNames => {
+        caches.keys().then(cacheVersions => {
             return Promise.all(
-                cacheNames.map(cache => {
-                    if (cache != cacheName) {
+                cacheVersions.map(cache => {
+                    if (cache != cacheVersion) {
                         return caches.delete(cache);
                     }
                 })
@@ -50,7 +50,12 @@ self.addEventListener('activate', e => {
     );
 });
 
-//Call fetch event from cache when site is offline
+//Cache falling back to the network, for offline first apps
 self.addEventListener('fetch', e => {
-    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+    e.respondWith(
+        caches.match(e.request)
+        .then(response => {
+            return response || fetch(e.request);
+        })
+    );
 });

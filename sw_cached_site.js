@@ -43,19 +43,21 @@ self.addEventListener('activate', e => {
 //Call fetch event to update content of site from server
 self.addEventListener('fetch', e => {
     e.respondWith(
-        fetch(e.request)
+        //Check cache first for content
+        caches.match(e.request)
         .then(response => {
             //Make clone of response
             const resClone = resonse.clone();
             //Open cache
             caches
-            .open(cacheVersion)
-            .then(cache => {
-                //Add response from server to browser cache
-                cache.put(e.request, resClone);
-            });
-            return response;
-        //Call fetch event from cache when site is offline
-        }).catch(err => caches.match(e.request).then(response => response))
+                .open(cacheVersion)
+                .then(cache => {
+                    //Add response from server to browser cache
+                    cache.put(e.request, resClone);
+                });
+            return response || fetch(e.request);
+            //Call fetch event from cache when site is offline
+            // }).catch(err => caches.match(e.request).then(response => response))
+        })
     );
 });
