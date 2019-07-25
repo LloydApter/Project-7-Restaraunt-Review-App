@@ -1,4 +1,4 @@
-<img src=https://raw.githubusercontent.com/LloydApter/Project-7-Restaurant-Review-App/blob/master/img/5.jpg>
+<img align="left" width="25%" height="25%" src=https://raw.githubusercontent.com/LloydApter/Project-7-Restaurant-Review-App/master/img/5.jpg>
 
 # Restaurant Review PWA Project
 
@@ -8,9 +8,9 @@ This is a restaurant review site of some classic authenthentic restaurants in Ne
 
 ## Site Screen Shot on iPhone 6/7/8 Size Screens
 
-
-<img src=https://raw.githubusercontent.com/LloydApter/Project-7-Restaurant-Review-App/master/images/restaurant-review-site.png>
-
+<p align="center">
+<img width="400" height="100%" src=https://raw.githubusercontent.com/LloydApter/Project-7-Restaurant-Review-App/master/img/restaurant-review-site.png>
+</p>
 
 ## Table of Contents
 
