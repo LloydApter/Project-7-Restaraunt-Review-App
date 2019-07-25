@@ -1,4 +1,4 @@
-< img src=https://raw.githubusercontent.com/LloydApter/Project-7-Restaurant-Review-App/master/img/5.jpg  width="150">
+<img align="left" width="100" height="100" srcsrc=https://raw.githubusercontent.com/LloydApter/Project-7-Restaurant-Review-App/master/img/5.jpg>
 
 # Restaurant Review PWA Project
 
