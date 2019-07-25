@@ -16,6 +16,7 @@
     /* margin: auto; */
   }
 
+  /* Filter layout select to support large screens, keeping controls on the left */
   .filter-options {
     grid-area: search;
     display: grid;
@@ -66,6 +67,7 @@
     padding: 1px 50px 1px 1px;
   }
 
+  /* Enabling more restaurants to show on a line as the screen size increases */
   #restaurants-list {
     grid-area: list;
     display: grid;
@@ -94,6 +96,7 @@
     margin: auto;
   }
 
+  /* Altering the restaurant review pages so that reviews are placed on the right side by side with the restaurant info */
   #inside {
     grid-area: main;
     display: grid;
@@ -101,7 +104,6 @@
     grid-template-rows: auto;
     align-items: start;
     align-content: top;
-    /* grid-gap: 10px; */
     grid-template-areas:
       "map map"
       "detail reviews";
@@ -109,26 +111,18 @@
     margin: auto;
   }
 
-  /* #restaurant-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  } */
-
   #restaurant-container {
     grid-area: detail;
     align-content: start;
-    height: 100%;
-    /* margin: auto;  */
+    height: 100%;  /* margin: auto;  */
   }
 
+  /* Moving cuisine header above to align with reviews header in order to improve layout look and feel */
   #restaurant-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-content: stretch;
-    /* margin: auto; */
     grid-area: detail;
     align-content: start;
     height: 100%;

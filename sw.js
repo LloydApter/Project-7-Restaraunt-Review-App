@@ -1,3 +1,4 @@
+// Variables for cache name and array items to cache for service workers
 var version = 'v1::';
 const cacheAssets = [
     'index.hmtl',
@@ -22,30 +23,25 @@ const cacheAssets = [
     'css/large.css',
 ];
 
-// Call install event
+// Call service worker install event and cache files without waiting
 self.addEventListener('install', e => {
-    console.log('ServiceWorker: Installed');
     e.waitUntil(
         caches
         .open(cacheName)
         .then(cache => {
-            console.log('Service Worker: Caching Files');
             cache.addAll(cacheAssets);
         })
         .then(() => self.skipWaiting())
     );
 });
 
-// Call activate event
+// Call activate event and clear old caches
 self.addEventListener('activate', e => {
-    console.log('ServiceWorker: Activated');
-    // remove old caches
     e.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
                 cacheNames.map(cache => {
                     if (cache != cacheName) {
-                        console.log('Service Worker: Cleasring Old Caches');
                         return caches.delete(cache);
                     }
                 })
@@ -54,8 +50,7 @@ self.addEventListener('activate', e => {
     );
 });
 
-//Call fetch event
+//Call fetch event from cache when site is offline
 self.addEventListener('fetch', e => {
-    console.log('Service Worker: Fetching');
     e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
 });

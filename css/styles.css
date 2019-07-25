@@ -1,5 +1,22 @@
 @charset "utf-8";
-/* CSS Document */
+/* Formating each page as a CSS Grid */
+html, body{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  align-items: stretch;
+  background-color: #fdfdfd;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #333;
+  line-height: 1.5;
+  
+}
+
+/* Basic CCS formating */
 ul, li {
 	font-size: 1em;
 	color: #333;
@@ -47,9 +64,10 @@ span {
   font-weight: 600;
 }
 
+/* Placing a skip-link on each page for improved navigational accessibility */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -100px;
   left: 0;
   background: darkgreen;
   color: white;
@@ -61,22 +79,7 @@ span {
   top: 0;
 }
 
-html, body{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-  align-items: stretch;
-  background-color: #fdfdfd;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	color: #333;
-  line-height: 1.5;
-  /* margin: auto; */
-}
-
+/* Formating the header area of each page as a inner CSS Grid */
 header {
   grid-area: header;
   display: grid;
@@ -87,6 +90,7 @@ header {
   align-items: stretch;
 }
 
+/* Formatting the main tag area of the index page as a CSS Grid */
 main #maincontent {
   grid-area: main;
   display: grid;
@@ -100,6 +104,7 @@ main #maincontent {
   margin: auto;
 }
 
+/* Formatting the main tag area of the inner pages as a CSS Grid */
 main #inside {
   grid-area: main;
   display: grid;
@@ -190,8 +195,8 @@ nav h1 a {
   background-color: #ccc;
 }
 
+/* Formatting the inner content of the index and inner pages using CSS Grid based on a mobile first approach, i.e. single column */
 /* ====================== Restaurant Filtering ====================== */
-
 .filter-options {
   grid-area: search;
   display: grid;
@@ -261,6 +266,7 @@ nav h1 a {
   padding: 5%;
   text-align: left;
 }
+
 #restaurants-list .restaurant-img {
   display: block;
   margin-left: auto;
@@ -302,15 +308,10 @@ nav h1 a {
 
 /* ====================== Restaurant Details ====================== */
 #inside header {
-  /* position: fixed; */
-  /* top: 0; */
   width: 100%;
-  /* z-index: 1000; */
 }
 
 #inside footer {
-  /* bottom: 0; */
-  /* position: absolute; */
   max-width: 100%;
 }
 
@@ -319,7 +320,6 @@ nav h1 a {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   justify-content: stretch;
-  /* margin: auto; */
   grid-area: details;
   grid-template-areas: 
   "name"
@@ -336,7 +336,6 @@ nav h1 a {
   display: block;
   background: darkgreen;
   color: white;
-  /* font-family: Arial,sans-serif; */
   font-size: 2em;
   font-weight: 200;
   letter-spacing: 0;
@@ -401,7 +400,6 @@ address h2 {
   grid-area: hours;
   border: 2px solid #f3f3f3;
   background: white;
-  /* list-style-type: none; */
   margin: auto;
   padding: 0%;
   margin-bottom: 3%;

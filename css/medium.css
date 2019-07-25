@@ -15,6 +15,7 @@
     margin: auto;
   }
 
+  /* Placing filter header and select boxes in one row on tablet size screens */
   .filter-options {
     grid-area: search;
     display: grid;
@@ -63,7 +64,7 @@
     padding: 1px 50px 1px 1px;
   }
 
-
+  /* Enabling two plus restaurants to show on same row on tablet screens */
   #restaurants-list {
     grid-area: list;
     display: grid;

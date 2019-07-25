@@ -1,4 +1,4 @@
-//ensure service worker supported by browser
+// Ensure service worker supported by browser and register it.
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker

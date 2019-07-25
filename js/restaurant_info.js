@@ -1,39 +1,17 @@
+// Created global map variable for Google Map API
 let restaurant;
 var map;
 
 /**
  * Initialize map as soon as the page is loaded.
  */
-// document.addEventListener('DOMContentLoaded', (event) => {  
-//   initMap();
-// });
+document.addEventListener('DOMContentLoaded', (event) => {  
+  window.initMap();
+});
 
 /**
- * Initialize leaflet map
+ * Initialize Google map
  */
-// initMap = () => {
-//   fetchRestaurantFromURL((error, restaurant) => {
-//     if (error) { // Got an error!
-//       console.error(error);
-//     } else {      
-//       self.newMap = L.map('map', {
-//         center: [restaurant.latlng.lat, restaurant.latlng.lng],
-//         zoom: 16,
-//         scrollWheelZoom: false
-//       });
-//       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-//         mapboxToken: '<your MAPBOX API KEY HERE>',
-//         maxZoom: 18,
-//         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-//           '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-//           'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//         id: 'mapbox.streets'    
-//       }).addTo(newMap);
-//       fillBreadcrumb();
-//       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
-//     }
-//   });
-// }; 
  
  window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
@@ -77,7 +55,7 @@ fetchRestaurantFromURL = (callback) => {
 };
 
 /**
- * Create restaurant HTML and add it to the webpage
+ * Create restaurant HTML and add it to the webpage.  Added image alt for accessibility.
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
@@ -147,7 +125,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 };
 
 /**
- * Create review HTML and add it to the webpage.
+ * Create review HTML and add it to the webpage. Formatted rating element as div.
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');

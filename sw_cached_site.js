@@ -1,4 +1,5 @@
-const cacheName = 'v2';
+// Variables for cache name and array items to cache for service workers
+var version = 'v1::';
 const cacheAssets = [
     'index.hmtl',
     'restaurant.html',
@@ -25,14 +26,12 @@ const cacheAssets = [
 
 // Call activate event
 self.addEventListener('activate', e => {
-    console.log('ServiceWorker: Activated');
     // remove old caches
     e.waitUntil(
-        caches.keys().then(cacheNames => {
+        caches.keys().then(cacheVersions => {
             return Promise.all(
-                cacheNames.map(cache => {
-                    if (cache != cacheName) {
-                        console.log('Service Worker: Cleasring Old Caches');
+                cacheVersions.map(cache => {
+                    if (cache != cacheVersion) {
                         return caches.delete(cache);
                     }
                 })
@@ -41,22 +40,22 @@ self.addEventListener('activate', e => {
     );
 });
 
-//Call fetch event
+//Call fetch event to update content of site from server
 self.addEventListener('fetch', e => {
-    console.log('Service Worker: Fetching');
     e.respondWith(
         fetch(e.request)
-        .then(res => {
-            //Make copy/clone of response
-            const resClone = res.clone();
+        .then(response => {
+            //Make clone of response
+            const resClone = resonse.clone();
             //Open cache
             caches
-            .open(cacheName)
+            .open(cacheVersion)
             .then(cache => {
-                //Add response to cache
+                //Add response from server to browser cache
                 cache.put(e.request, resClone);
             });
-            return res;
-        }).catch(err => caches.match(e.request).then(res => res))
-    )
+            return response;
+        //Call fetch event from cache when site is offline
+        }).catch(err => caches.match(e.request).then(response => response))
+    );
 });
