@@ -4,7 +4,7 @@
 
 ## OverView
 
-This is a restaurant review site of some classic authenthentic restaurants in New Yoor City. The website is designed along the lines of a progressive web application (PWA), i.e. uses service workers to support offline access and is designed mobile first.  The site is also designed to assist accessibility alsong the guidelines and syntax offered by WAI ARIA. The site uses Google Maps API to marker the locations of each restaurant and a offers a filter feature to find a restaurant by neighborhood and cuisine. Each restaurant as a details page which includes its postion on Google Maps, an image, its address, working hours and reviews.
+This is a restaurant review site of some classic authenthentic restaurants in New York City. The website is designed along the lines of a progressive web application (PWA), i.e. uses service workers to support offline access and is designed mobile first.  The site is also designed to provide accessibility along the guidelines and syntax offered by WAI ARIA. The site uses Google Maps API to mark the locations of each restaurant and a offers a filter feature to find a restaurant by neighborhood and cuisine. Each restaurant as a details page which includes its postion on Google Maps, an image, its address, working hours and reviews.
 
 ## Site Screen Shot on iPhone 6/7/8 Size Screens
 
