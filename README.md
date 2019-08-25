@@ -43,7 +43,7 @@ This is a restaurant review site of some classic authenthentic restaurants in Ne
 
 ## Features
 
-The PWA is built using HTML5, CSS and JavaScript, JSON data and Google MAP API. No frameworks were necessary for this project size and all code was done in vanilla JavaScript.  The PWA offers customized user experience on mobile, tablet and desk top screens and basicaly helps the user to search for authentic NY city restaurants based on neighborhood and cuisine, to read rooms and view ratings of each restaurant and too find their locartion on Google Maps. 
+The PWA is built using HTML5, CSS and JavaScript, JSON data and Google MAP API. No frameworks were necessary for this project size and all code was done in vanilla JavaScript.  The PWA offers customized user experience on mobile, tablet and desk top screens and basically helps the user to search for authentic NY city restaurants based on neighborhood and cuisine, to read reviews and view ratings of each restaurant and too find their location on Google Maps. 
 
 
 ---
